@@ -1,0 +1,446 @@
+##Paying the Minimum
+##Problem 1
+##Write a program to calculate the credit card balance after one year if a person only pays the
+##minimum monthly payment required by the credit card company each month.
+
+##Use raw_input() to ask for the following three floating point numbers:
+##1. the outstanding balance on the credit card
+##2. annual interest rate
+##3. minimum monthly payment rate
+
+##For each month, print the minimum monthly payment, remaining balance, principle paid in the
+##format shown in the test cases below. All numbers should be rounded to the nearest penny.
+##Finally, print the result, which should include the total amount paid that year and the remaining
+##balance.
+
+##note:workable, not so elegant solution. seems more exact than test case.
+x=raw_input("Enter the outstanding balance on your credit card: $")
+x=float(x)
+y=raw_input("Enter the annual credit card interest rate as a decimal:")
+y=float(y)
+z=raw_input("Enter the minimum monthly payment rate as a decimal:")
+z=float(z)
+
+##month 1
+month1pmt=x*z
+month1p=month1pmt-(y/12*x)
+month1r=x-month1p
+
+print "Month: 1"
+print "Minimum monthly payment: $", round(month1pmt, 2)
+print "Principle paid: $", round(month1p, 2)
+print "Remaining balance: $", round(month1r, 2)
+
+
+##month 2
+month2pmt=month1r*z
+month2p=month2pmt-(y/12*month1r)
+month2r=month1r-month2p
+
+print "Month: 2"
+print "Minimum monthly payment: $", round(month2pmt, 2)
+print "Principle paid: $", round(month2p, 2)
+print "Remaining balance: $", round(month2r, 2)
+
+
+##month 3
+month3pmt=month2r*z
+month3p=month3pmt-(y/12*month2r)
+month3r=month2r-month3p
+
+print "Month: 3"
+print "Minimum monthly payment: $", round(month3pmt, 2)
+print "Principle paid: $", round(month3p, 2)
+print "Remaining balance: $", round(month3r, 2)
+
+##month 4
+month4pmt=month3r*z
+month4p=month4pmt-(y/12*month3r)
+month4r=month3r-month4p
+
+print "Month: 4"
+print "Minimum monthly payment: $", round(month4pmt, 2)
+print "Principle paid: $", round(month4p, 2)
+print "Remaining balance: $", round(month4r, 2)
+
+##month 5
+month5pmt=month4r*z
+month5p=month5pmt-(y/12*month4r)
+month5r=month4r-month5p
+
+print "Month: 5"
+print "Minimum monthly payment: $", round(month5pmt, 2)
+print "Principle paid: $", round(month5p, 2)
+print "Remaining balance: $", round(month5r, 2)
+
+##month 6
+month6pmt=month5r*z
+month6p=month6pmt-(y/12*month5r)
+month6r=month5r-month6p
+
+print "Month: 6"
+print "Minimum monthly payment: $", round(month6pmt, 2)
+print "Principle paid: $", round(month6p, 2)
+print "Remaining balance: $", round(month6r, 2)
+
+##month 7
+month7pmt=month6r*z
+month7p=month7pmt-(y/12*month6r)
+month7r=month6r-month7p
+
+print "Month: 7"
+print "Minimum monthly payment: $", round(month7pmt, 2)
+print "Principle paid: $", round(month7p, 2)
+print "Remaining balance: $", round(month7r, 2)
+
+##month 8
+month8pmt=month7r*z
+month8p=month8pmt-(y/12*month7r)
+month8r=month7r-month8p
+
+print "Month: 8"
+print "Minimum monthly payment: $", round(month8pmt, 2)
+print "Principle paid: $", round(month8p, 2)
+print "Remaining balance: $", round(month8r, 2)
+
+##month 9
+month9pmt=month8r*z
+month9p=month9pmt-(y/12*month8r)
+month9r=month8r-month9p
+
+print "Month: 9"
+print "Minimum monthly payment: $", round(month9pmt, 2)
+print "Principle paid: $", round(month9p, 2)
+print "Remaining balance: $", round(month9r, 2)
+
+##month 10
+month10pmt=month9r*z
+month10p=month10pmt-(y/12*month9r)
+month10r=month9r-month10p
+
+print "Month: 10"
+print "Minimum monthly payment: $", round(month10pmt, 2)
+print "Principle paid: $", round(month10p, 2)
+print "Remaining balance: $", round(month10r, 2)
+
+##month 11
+month11pmt=month10r*z
+month11p=month11pmt-(y/12*month10r)
+month11r=month10r-month11p
+
+print "Month: 11"
+print "Minimum monthly payment: $", round(month11pmt, 2)
+print "Principle paid: $", round(month11p, 2)
+print "Remaining balance: $", round(month11r, 2)
+
+##month 12
+month12pmt=month11r*z
+month12p=month12pmt-(y/12*month11r)
+month12r=month11r-month12p
+
+print "Month: 12"
+print "Minimum monthly payment: $", round(month12pmt, 2)
+print "Principle paid: $", round(month12p, 2)
+print "Remaining balance: $", round(month12r, 2)
+
+##totals
+print "Results:"
+print "Beginning Balance: $", round(x, 2)
+print "Total Payments: $", round((month1pmt+month2pmt+month3pmt+month4pmt+month5pmt+month6pmt+month7pmt+month8pmt+month9pmt+month10pmt+month11pmt+month12pmt))
+print "Total Principle Paid: $", round((month1p+month2p+month3p+month4p+month5p+month6p+month7p+month8p+month9p+month10p+month11p+month12p), 2)
+print "Total Interest Paid: $", round(((month1pmt+month2pmt+month3pmt+month4pmt+month5pmt+month6pmt+month7pmt+month8pmt+month9pmt+month10pmt+month11pmt+month12pmt)-(month1p+month2p+month3p+month4p+month5p+month6p+month7p+month8p+month9p+month10p+month11p+month12p)), 2)
+print "Remaining Balance: $", round((x-(month1p+month2p+month3p+month4p+month5p+month6p+month7p+month8p+month9p+month10p+month11p+month12p)), 2)
+##
+
+####more elegant solution
+x=float(raw_input("Enter the outstanding balance on your credit card: $"))
+y=float(raw_input("Enter the annual credit card interest rate as a decimal:"))
+z=float(raw_input("Enter the minimum monthly payment rate as a decimal:"))
+
+nmonth=0
+bal=x
+pmttotal=0
+while nmonth<12:
+    nmonth=nmonth+1
+    print "Month:", nmonth
+    monthpmt=bal*z
+    print "Minimum monthly payment: $", round(monthpmt, 2)
+    monthp=monthpmt-(y/12*bal)
+    print "Principle paid: $", round(monthp, 2)
+    bal=bal-monthp
+    print "Remaining balance: $", round(bal, 2)
+    pmttotal=pmttotal+monthpmt
+ 
+print "Results:"
+print "Beginning Balance: $", round(x, 2)
+print "Total Payments: $", round(pmttotal, 2)
+print "Total Principle Paid: $", round((x-bal), 2)
+print "Total Interest Paid: $", round((pmttotal-(x-bal)), 2)
+print "Remaining Balance: $", round(bal, 2)
+  
+
+##Test Case 1
+##>>>
+##Enter the outstanding balance on your credit card: 4800
+##Enter the annual credit card interest rate as a decimal: .2
+##Enter the minimum monthly payment rate as a decimal: .02
+##Month: 1
+##Minimum monthly payment: $96.0
+##Principle paid: $16.0
+##Remaining balance: $4784.0
+##Month: 2
+##Minimum monthly payment: $95.68
+##Principle paid: $15.95
+##Remaining balance: $4768.05
+##Month: 3
+##Minimum monthly payment: $95.36
+##Principle paid: $15.89
+##Remaining balance: $4752.16 
+##Month: 4
+##Minimum monthly payment: $95.04
+##Principle paid: $15.84
+##Remaining balance: $4736.32
+##Month: 5
+##Minimum monthly payment: $94.73
+##Principle paid: $15.79
+##Remaining balance: $4720.53
+##Month: 6
+##Minimum monthly payment: $94.41
+##Principle paid: $15.73
+##Remaining balance: $4704.8
+##Month: 7
+##Minimum monthly payment: $94.1
+##Principle paid: $15.69
+##Remaining balance: $4689.11
+##Month: 8
+##Minimum monthly payment: $93.78
+##Principle paid: $15.63
+##Remaining balance: $4673.48
+##Month: 9
+##Minimum monthly payment: $93.47
+##Principle paid: $15.58
+##Remaining balance: $4657.9
+##Month: 10
+##Minimum monthly payment: $93.16
+##Principle paid: $15.53
+##Remaining balance: $4642.37
+##Month: 11
+##Minimum monthly payment: $92.85
+##Principle paid: $15.48
+##Remaining balance: $4626.89
+##Month: 12
+##Minimum monthly payment: $92.54
+##Principle paid: $15.43
+##Remaining balance: $4611.46
+##RESULT
+##Total amount paid: $1131.12
+##Remaining balance: $4611.46
+##>>>
+
+
+##Test Case 2
+##In recent years, many credit card corporations tightened restrictions by raising their minimum
+##monthly payment rate to 4%. As illustrated in the second test case below, people will be able to
+##pay less interest over the years and get out of debt faster. 
+##>>>
+##Enter the outstanding balance on your credit card: 4800
+##Enter the annual credit card interest rate as a decimal: .2
+##Enter the minimum monthly payment rate as a decimal: .04
+##Month: 1
+##Minimum monthly payment: $192.0
+##Principle paid: $112.0
+##Remaining balance: $4688.0
+##Month: 2
+##Minimum monthly payment: $187.52
+##Principle paid: $109.39
+##Remaining balance: $4578.61
+##Month: 3
+##Minimum monthly payment: $183.14
+##Principle paid: $106.83
+##Remaining balance: $4471.78
+##Month: 4
+##Minimum monthly payment: $178.87
+##Principle paid: $104.34
+##Remaining balance: $4367.44
+##Month: 5
+##Minimum monthly payment: $174.7
+##Principle paid: $101.91
+##Remaining balance: $4265.53
+##Month: 6
+##Minimum monthly payment: $170.62
+##Principle paid: $99.53
+##Remaining balance: $4166.0
+##Month: 7
+##Minimum monthly payment: $166.64
+##Principle paid: $97.21
+##Remaining balance: $4068.79
+##Month: 8
+##Minimum monthly payment: $162.75
+##Principle paid: $94.94
+##Remaining balance: $3973.85
+##Month: 9
+##Minimum monthly payment: $158.95
+##Principle paid: $92.72
+##Remaining balance: $3881.13
+##Month: 10
+##Minimum monthly payment: $155.25
+##Principle paid: $90.56
+##Remaining balance: $3790.57
+##Month: 11
+##Minimum monthly payment: $151.62 
+##Principle paid: $88.44
+##Remaining balance: $3702.13
+##Month: 12
+##Minimum monthly payment: $148.09
+##Principle paid: $86.39
+##Remaining balance: $3615.74
+##RESULT
+##Total amount paid: $2030.15
+##Remaining balance: $3615.74
+##>>>>>>>>>>>>>>>>>>>>>>>>>
+
+##Paying Debt Off In a Year
+##Problem 2
+##Now write a program that calculates the minimum fixed monthly payment needed in order pay
+##off a credit card balance within 12 months. We will not be dealing with a minimum monthly
+##payment rate.
+##Take as raw_input() the following floating point numbers:
+##1. the outstanding balance on the credit card
+##2. annual interest rate as a decimal 
+##Print out the fixed minimum monthly payment, number of months (at most 12 and possibly less
+##than 12) it takes to pay off the debt, and the balance (likely to be a negative number).
+##Assume that the interest is compounded monthly according to the balance at the start of the
+##month (before the payment for that month is made). The monthly payment must be a multiple of
+##$10 and is the same for all months. Notice that it is possible for the balance to become negative
+##using this payment scheme. In short:
+##Monthly interest rate = Annual interest rate / 12.0
+##Updated balance each month = Previous balance * (1 + Monthly interest rate) – Minimum
+##monthly payment
+
+x=float(raw_input("Enter the outstanding balance on your credit card:"))
+y=float(raw_input("Enter the annual credit card interest rate as a decimal:"))
+
+monthpmt=0
+bal=x
+nmonth=0
+if bal<=0:
+    print "You're already paid off!"
+else:
+    while bal>0:
+        monthpmt=monthpmt+10
+    ##    print "current guess",monthpmt
+        bal=x
+        for nmonth in range(0, 12):
+            nmonth=nmonth+1
+            bal=bal*(1+y/12)-monthpmt
+    ##        print "Month:",nmonth
+    ##        print "Remaining Balance:",bal
+            if bal<=0:
+                break
+    print "RESULT"
+    print "Monthly Payment to pay off debt in 1 year:$",monthpmt
+    print "Number of months needed:",nmonth
+    print "Ending Balance:$",round(bal, 2)
+        
+
+##Test Case 1
+##>>>
+##Enter the outstanding balance on your credit card: 1200
+##Enter the annual credit card interest rate as a decimal: .18
+##RESULT
+##Monthly payment to pay off debt in 1 year: 120
+##Number of months needed: 11
+##Balance: -10.05
+##>>>
+##Test Case 2
+##>>>
+##Enter the outstanding balance on your credit card: 32000
+##Enter the annual credit card interest rate as a decimal: .2
+##RESULT
+##Monthly payment to pay off debt in 1 year: 2970
+##Number of months needed: 12
+##Balance: -74.98
+##>>>
+##Hints
+##Start at $10 payments per month and calculate whether the balance will be paid off (taking into
+##account the interest accrued each month). If $10 monthly payments are insufficient to pay off the
+##debt within a year, increase the monthly payment by $10 and repeat.
+
+##Using Bisection Search to Make the Program Faster
+##You’ll notice that in problem 2, your monthly payment had to be a multiple of $10. Why did we
+##make it that way? In a separate file, you can try changing the code so that the payment can be
+##any dollar and cent amount (in other words, the monthly payment is a multiple of $0.01). Does 
+##your code still work? It should, but you may notice that your code runs more slowly, especially
+##in cases with very large balances and interest rates.
+##How can we make this program faster? We can use bisection search (to be covered in lecture
+##3)!
+##We are searching for the smallest monthly payment such that we can pay off the debt within a
+##year. What is a reasonable lower bound for this value? We can say $0, but you can do better than
+##that. If there was no interest, the debt can be paid off by monthly payments of one-twelfth of the
+##original balance, so we must pay at least this much. One-twelfth of the original balance is a good
+##lower bound.
+##What is a good upper bound? Imagine that instead of paying monthly, we paid off the entire
+##balance at the end of the year. What we ultimately pay must be greater than what we would’ve
+##paid in monthly installments, because the interest was compounded on the balance we didn’t pay
+##off each month. So a good upper bound would be one-twelfth of the balance, after having its
+##interest compounded monthly for an entire year.
+##In short:
+##Monthly payment lower bound = Balance / 12.0
+##Monthly payment upper bound = (Balance * (1 + (Annual interest rate / 12.0)) ** 12.0) / 12.0
+
+##Problem 3
+##Write a program that uses these bounds and bisection search (for more info check out the
+##Wikipedia page here) to find the smallest monthly payment to the cent (no more multiples of
+##$10) such that we can pay off the debt within a year. Try it out with large inputs, and notice how
+####fast it is. Produce the output in the same format as you did in problem 2.
+##
+x=float(raw_input("Enter the outstanding balance on your credit card:$"))
+y=float(raw_input("Enter the annual credit card interest rate as a decimal:"))
+
+bal=x
+low=bal/12.0
+high=(bal*(1+(y/12.0))**12.0)/12.0
+
+monthpmt=(high+low)/2
+nmonth=0
+if bal<=0:
+    print "You're already paid off!"
+else:
+    while bal>=0 or bal<-.12:
+        monthpmt=round((high+low)/2, 2)
+##        print "current guess",monthpmt
+        bal=x
+        for nmonth in range(0, 12):
+            nmonth=nmonth+1
+            bal=(bal*(1+y/12)-monthpmt)
+##            print "Month:",nmonth
+##            print "Remaining Balance:",bal
+##        print "Remaining Balance:",bal
+        if bal>0:
+            low=monthpmt
+        else:
+            high=monthpmt
+
+    print "RESULT"
+    print "Monthly payment to pay off debt in 1 year:$",monthpmt
+    print "Number of months needed:",nmonth
+    print "Balance:$",round(bal, 2)
+
+##Test Case 1
+##>>>
+##Enter the outstanding balance on your credit card: 320000
+##Enter the annual credit card interest rate as a decimal: .2
+##RESULT
+##Monthly payment to pay off debt in 1 year: 29643.05
+##Number of months needed: 12
+##Balance: -0.1
+##>>>
+##Test Case 2
+##>>>
+##Enter the outstanding balance on your credit card: 999999
+##Enter the annual credit card interest rate as a decimal: .18
+##RESULT
+##Monthly payment to pay off debt in 1 year: 91679.91
+##Number of months needed: 12
+##Balance: -0.12
+##>>>
